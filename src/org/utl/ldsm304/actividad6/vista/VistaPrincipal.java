@@ -78,26 +78,26 @@ public class VistaPrincipal {
             switch(eleccion){
                 case 'a':
                     double num=cam.obtenerNumeroMasRepetido(precios);
-                    System.out.println("El numero que mas se repite es: "+num);
+                    System.out.println("\nEl numero que mas se repite es: "+num);
                     break;
                 case 'b':
                     int numPares=cam.contarNumerosPares(precios);
-                    System.out.println("Cantidad de numeros pares: "+numPares);
+                    System.out.println("\nCantidad de numeros pares: "+numPares);
                     break;
                 case 'c':
                     int numImpares=cam.contarNumerosImpares(precios);
-                    System.out.println("Cantidad de numeros impares: "+numImpares);
+                    System.out.println("\nCantidad de numeros impares: "+numImpares);
                     break;
                 case 'd':
                     double sumaDiagonal=cam.sumarNumerosDiagonal(precios);
-                    System.out.println("La suma diagonal es: "+sumaDiagonal);
+                    System.out.println("\nLa suma diagonal es: "+sumaDiagonal);
                     break;
                 case 'e':
                     int multiplos=cam.contarNumerosMultiplos(precios);
-                    System.out.println("La cantidad de multiplos de 5 es: "+multiplos);
+                    System.out.println("\nLa cantidad de multiplos de 5 es: "+multiplos);
                     break;
                 default:
-                    System.out.println("Opcion incorrecta");
+                    System.out.println("\nOpcion incorrecta");
                 break;
                     
             }
