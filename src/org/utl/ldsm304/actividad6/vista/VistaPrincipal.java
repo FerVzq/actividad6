@@ -5,6 +5,8 @@
 package org.utl.ldsm304.actividad6.vista;
 
 import java.util.ArrayList;
+import java.util.Scanner;
+import org.utl.ldsm304.actividad6.controlador.ControladorArregloNumeros;
 
 /**
  *
@@ -56,7 +58,50 @@ public class VistaPrincipal {
 }
 }
     public static void main(String[] args) {
-          System.out.println("Estoy probando que se pueda actualizar el repositorio con nuevos cambios");
+        Scanner sc=new Scanner(System.in);
+        System.out.println("1.Operaciones con arreglo bidimensional de numeros (precios) ");
+        System.out.println("2.Operaciones con arreglo bidimensional de cadenas");
+        System.out.println("Ingrese la opcion que desea ejecutar: ");
+        int opcion=sc.nextInt();
+        if(opcion==1){
+            double[][] precios=generarArregloPrecios();
+            ControladorArregloNumeros cam=new ControladorArregloNumeros();
+            System.out.println("a. Obtener el numero que mas se repite. ");
+            System.out.println("b. Obtener la cantidad de numeros pares ");
+            System.out.println("c. Obtener la cantidad de numeros impares ");
+            System.out.println("d. Obtener la suma de los numeros que estan en la diagonal ");
+            System.out.println("e. Obtener la cantidad de numeros mu1ltiplos de 5 ");
+            System.out.println("Ingrese la opcion que desea ejecutar: ");
+            char eleccion=sc.next().charAt(0);
+            System.out.println("\n----- Arreglo ------");
+            imprimirArregloPrecios(precios);
+            switch(eleccion){
+                case 'a':
+                    double num=cam.obtenerNumeroMasRepetido(precios);
+                    System.out.println("El numero que mas se repite es: "+num);
+                    break;
+                case 'b':
+                    int numPares=cam.contarNumerosPares(precios);
+                    System.out.println("Cantidad de numeros pares: "+numPares);
+                    break;
+                case 'c':
+                    int numImpares=cam.contarNumerosImpares(precios);
+                    System.out.println("Cantidad de numeros impares: "+numImpares);
+                    break;
+                case 'd':
+                    double sumaDiagonal=cam.sumarNumerosDiagonal(precios);
+                    System.out.println("La suma diagonal es: "+sumaDiagonal);
+                    break;
+                case 'e':
+                    int multiplos=cam.contarNumerosMultiplos(precios);
+                    System.out.println("La cantidad de multiplos de 5 es: "+multiplos);
+                    break;
+                default:
+                    System.out.println("Opcion incorrecta");
+                break;
+                    
+            }
+
           
     }
     
