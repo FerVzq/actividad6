@@ -58,8 +58,8 @@ public class ControladorArregloNumeros {
         
     }
     
-    public int sumarNumerosDiagonal(double[][] matriz){
-        int suma = 0;
+    public double sumarNumerosDiagonal(double[][] matriz){
+        double suma = 0;
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz.length; j++) {
                 if(i == j){
@@ -74,7 +74,7 @@ public class ControladorArregloNumeros {
         int contador = 0;
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
-                if(matriz[i][j] % 5 != 0){
+                if(matriz[i][j] % 5 == 0){
                     contador++;
                 }
             }
