@@ -6,6 +6,7 @@ package org.utl.ldsm304.actividad6.vista;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import org.utl.ldsm304.actividad6.controlador.ControladorArregloCadenas;
 import org.utl.ldsm304.actividad6.controlador.ControladorArregloNumeros;
 
 /**
@@ -100,9 +101,36 @@ public class VistaPrincipal {
                     System.out.println("\nOpcion incorrecta");
                 break;
                     
+            }  
+    } else if(opcion==2){
+            String [][] cadenas= generarArregloCadenas();
+            ControladorArregloCadenas cac= new ControladorArregloCadenas();
+            System.out.println("a. Cadenas que empiezan con la letra o ");
+            System.out.println("b. Cadenas con 5 vocales");
+            System.out.println("c. Cadenas con silaba sa");
+            System.out.println("Ingrese la opcion que desea ejecutar:");
+             char eleccion=sc.next().charAt(0);
+            System.out.println("\n----- Arreglo ------");
+            imprimirArregloCadenas(cadenas);
+            switch(eleccion){
+                case 'a':
+                    ArrayList<String> cadenasO= cac.devolverCadenasConO(cadenas);
+                    System.out.println("\nLas cadenas que empiezan por o son: ");
+                    imprimirArrayResultante(cadenasO);
+                    break;
+                case 'b':
+                    ArrayList<String> cadenasVocales= cac.obtenerConTodasLasVocales(cadenas);
+                    System.out.println("\nLas cadenas que tiene las 5 vocales son: ");
+                    imprimirArrayResultante(cadenasVocales);
+                    break;
+                case 'c':
+                    ArrayList<String> cadenasSilaba= cac.obtenerConSilabaSa(cadenas);
+                    System.out.println("\nLas cadenas que tiene la silaba sa son: ");
+                    imprimirArrayResultante(cadenasSilaba);
+                    break;
             }
-
-          
+        }else{
+            System.out.println("Opcion incorrecta");
+        }
     }
-    
-}
+}   
